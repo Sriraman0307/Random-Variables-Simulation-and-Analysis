@@ -1,0 +1,21 @@
+count = 31;
+p=0.6;
+max=1000;
+z=zeros(1,count);
+k=zeros(1,count);
+for genDis = 2:count
+	z(genDis)= z(genDis-1) + ((nchoosek(count,genDis))*((0.6)^(genDis))*((0.4)^(count-genDis)));
+end
+
+for finCount = 1:max
+    j=rand;
+    i=1;
+    while j<z(i)	
+         i=i+1;  
+    end
+    k(i)=k(i)+1;
+end
+
+for Display = 1:count
+	disp([Display k(Display)])
+end
